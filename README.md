@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>PhotoRevive</h1>
-  <h3>Old Photograph Restoration Using Deep Learning and CNN-Based Image Inpainting</h3>
+  <h1>PhotoRestore</h1>
+  <h3>Old Photo Damage Detection and Restoration Using Deep Learning</h3>
   <p>
     <img alt="Status" src="https://img.shields.io/badge/Status-Production%20Ready-success" />
     <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-blue" />
@@ -10,11 +10,11 @@
 </div>
 
 <div align="center" style="background: linear-gradient(135deg, #171c2d, #2a3f6f, #0a7cff); color: white; padding: 24px 18px; border-radius: 18px; box-shadow: 0 12px 30px rgba(30, 96, 255, 0.35); margin: 20px 0;">
-  <p style="font-size: 1.15rem; margin: 0; font-weight: 600;">Upload a damaged image • Repair scratches and missing regions • Restore detail • Download the result</p>
+  <p style="font-size: 1.15rem; margin: 0; font-weight: 600;">Detect damaged regions • Restore scratched and broken areas • Recover the best possible image quality</p>
 </div>
 
 ## Overview
-PhotoRevive is a lightweight deep-learning application for restoring old and damaged photographs. The system focuses on a practical and realistic workflow: create synthetic damage from clean images, train a U-Net, and then restore real-world scratched or faded photos with minimal user effort.
+PhotoRestore is a lightweight deep-learning application for detecting and restoring damaged old photographs. The system combines automatic damage detection with a U-Net restoration model to recover scratches, stains, faded spots, and small missing regions while preserving the original content outside the damaged area.
 
 The project is intentionally kept simple and deployment-friendly so it can be trained and launched quickly on a local machine or a cloud deployment environment.
 
@@ -25,21 +25,26 @@ Old photos often suffer from:
 - faded colors and low contrast
 - missing or broken regions
 
-Manual restoration is time-consuming and requires expert editing. PhotoRevive gives users a simple upload-and-repair flow powered by deep learning.
+Manual restoration is time-consuming and requires expert editing. PhotoRestore gives users a practical upload-and-repair workflow that detects damaged areas and restores them with a deep-learning model.
 
 ## Core idea
-The main model is a U-Net CNN trained on paired data:
+The system combines two important steps:
+- damage detection: identifies damaged regions in the image
+- restoration: reconstructs the damaged area using a U-Net CNN
+
+The model is trained on paired data:
 - clean image
 - damaged version of the same image
-- model learns to reconstruct the original content from the damaged input
+- model learns to restore the original structure and texture from the damaged input
 
-This gives the system a strong image-to-image restoration capability while remaining manageable to train and deploy.
+This gives the project a strong image-to-image restoration capability while remaining manageable to train and deploy.
 
 ## Key features
 - Upload old photographs directly in the app
 - Automatic damage detection for scratches and small defects
 - Region-based repair for selected damaged areas
 - U-Net restoration pipeline with OpenCV fallback
+- Best-effort recovery of damaged pixels while preserving original image content
 - Before/after comparison in the UI
 - Download restored output as a PNG image
 - Simple project structure for local use and deployment
@@ -56,7 +61,7 @@ This gives the system a strong image-to-image restoration capability while remai
 
 ## Project architecture
 ```text
-PhotoRevive/
+PhotoRestore/
 ├── app.py                  # Streamlit web app
 ├── train.py                # training script
 ├── make_demo_dataset.py    # demo dataset generator
@@ -137,15 +142,16 @@ The repository includes:
 After uploading an old photograph, the app will:
 - detect scratches and damaged regions
 - reconstruct those regions with the trained model
-- preserve the rest of the image
+- preserve the untouched areas of the image
+- generate a cleaner, more legible restored version
 - display before/after restoration
 - allow the user to download the repaired photo
 
 ## Example use case
-A user uploads a faded, scratched family photo. The model identifies the damaged mask and reconstructs the missing detail while keeping the original photograph structure intact.
+A user uploads a faded, scratched family photo. The model identifies the damaged mask, restores the broken regions, and recovers the most realistic possible version of the photograph while keeping the original structure intact.
 
 ## Notes
-- This project is intentionally focused on a realistic, manageable restoration task.
+- This project is designed for practical old-photo repair: damage detection + restoration in one workflow.
 - For best quality, train on many clean photos and use a GPU environment such as Google Colab.
 - This is a restoration model for plausible photo repair, not a perfect historical reconstruction system.
 

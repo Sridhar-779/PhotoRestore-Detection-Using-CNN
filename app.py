@@ -1,4 +1,4 @@
-"""PhotoRevive Streamlit app."""
+"""PhotoRestore Streamlit app."""
 import io
 
 import cv2
@@ -8,7 +8,7 @@ from PIL import Image, ImageOps
 
 from src.restore import RestoreOptions, Restorer
 
-st.set_page_config(page_title="PhotoRevive", page_icon="🖼️", layout="wide")
+st.set_page_config(page_title="PhotoRestore", page_icon="🖼️", layout="wide")
 
 
 @st.cache_resource(show_spinner="Loading model...")
@@ -27,8 +27,8 @@ def to_pil(bgr):
 
 restorer = get_restorer()
 
-st.title("🖼️ PhotoRevive")
-st.caption("Old photograph restoration using a CNN-based U-Net model")
+st.title("🖼️ PhotoRestore")
+st.caption("Old photo damage detection and restoration using a CNN-based U-Net model")
 
 with st.sidebar:
     st.header("Settings")
