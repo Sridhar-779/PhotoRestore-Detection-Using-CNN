@@ -10,7 +10,7 @@
 </div>
 
 <div align="center" style="background: linear-gradient(135deg, #0f172a, #1e3a8a, #0ea5e9); color: white; padding: 20px 18px; border-radius: 18px; margin: 18px 0;">
-  <p style="font-size: 1.1rem; margin: 0; font-weight: 600;">Detect damaged regions • Restore old photos • Deploy on Streamlit Community Cloud</p>
+  <p style="font-size: 1.1rem; margin: 0; font-weight: 600;">Detect damaged regions • Restore old photos </p>
 </div>
 
 ## Overview
