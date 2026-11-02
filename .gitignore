@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+data/clean/*
+!data/clean/.gitkeep
+models/*.keras
+models/colorization/*.caffemodel
+outputs/*
+!outputs/.gitkeep

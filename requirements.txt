@@ -1,0 +1,9 @@
+tensorflow>=2.13,<2.20
+numpy
+opencv-python
+Pillow
+scikit-image
+matplotlib
+pandas
+streamlit
+streamlit-image-comparison
